@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { clickCookie } from "../../programerSlice";
+import { clickProgrammer } from "../../moneySlice";
 
 const CookieButton: React.FC = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(clickCookie());
+    dispatch(clickProgrammer());
   };
 
   return <button onClick={handleClick}>{"Click me for money!"}</button>;

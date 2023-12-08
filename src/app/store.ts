@@ -1,13 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import cookieReducer from '../programerSlice';
+import moneyReducer from '../moneySlice';
+import upgradeReducer from '../upgradeSlice';
 
 const store = configureStore({
   reducer: {
-    cookie: cookieReducer,
+    money: moneyReducer,
+    upgrade: upgradeReducer,
   },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
 
 export default store;
