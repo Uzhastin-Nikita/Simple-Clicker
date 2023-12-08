@@ -1,0 +1,15 @@
+@import "./styles/colors";
+
+body {
+    background: url("./assets/background.png");
+    color: $text-color;
+}
+
+h1 {
+    color: $primary-color;
+}
+
+.button {
+    background-color: $secondary-color;
+    color: $text-light-color;
+}

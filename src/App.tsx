@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  click,
-  buyUpgrade,
-  selectTotalMoney,
-} from "./app/moneySlice";
+import { click, buyUpgrade, selectTotalMoney } from "./app/moneySlice";
 import {
   buyType1Upgrade,
   buyType2Upgrade,
@@ -14,6 +10,8 @@ import {
   selectType2UpgradeCost,
   selectType2UpgradeIncomePerSecond,
 } from "./app/upgradeSlice";
+
+import "./App.scss";
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
