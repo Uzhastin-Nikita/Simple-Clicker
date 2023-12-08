@@ -1,16 +1,16 @@
-// src/moneySlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./app/store";
-import { UpgradeState, selectType1ClickMultiplier } from "./upgradeSlice";
 
 export interface MoneyState {
   totalMoney: number;
-  type1Upgrade: number
+  type1Upgrade: number;
+  type2UpgradeActivated: boolean;
 }
 
 const initialState: MoneyState = {
   totalMoney: 0,
   type1Upgrade: 1,
+  type2UpgradeActivated: false,
 };
 
 const moneySlice = createSlice({
@@ -22,12 +22,17 @@ const moneySlice = createSlice({
     },
     buyUpgrade: (state, action: PayloadAction<{ cost: number }>) => {
       state.totalMoney -= action.payload.cost;
-      state.type1Upgrade += 1
+      state.type1Upgrade += 1;
+    },
+    resetType2Upgrade: (state) => {
+      state.type2UpgradeActivated = false;
     },
   },
 });
 
-export const { click, buyUpgrade } = moneySlice.actions;
+export const { click, buyUpgrade, resetType2Upgrade } = moneySlice.actions;
 export const selectTotalMoney = (state: RootState) => state.money.totalMoney;
+export const selectType2UpgradeActivated = (state: RootState) =>
+  state.money.type2UpgradeActivated;
 
 export default moneySlice.reducer;
