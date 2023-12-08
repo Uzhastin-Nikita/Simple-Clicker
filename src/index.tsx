@@ -1,8 +1,9 @@
+// index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
-import store from './redux/store';
+import store from './app/store'; // Импортируйте store из правильного пути
 
 ReactDOM.render(
   <Provider store={store}>
