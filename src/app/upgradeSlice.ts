@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "./app/store";
+import { RootState } from "./store";
 
 export type Type1Upgrade = {
   level: number;

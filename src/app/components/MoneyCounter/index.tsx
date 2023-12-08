@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../app/store";
+import { RootState } from "../../store";
 
 const MoneyCounter: React.FC = () => {
   const money = useSelector((state: RootState) => state.money.money);

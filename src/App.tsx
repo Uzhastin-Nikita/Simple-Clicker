@@ -4,8 +4,7 @@ import {
   click,
   buyUpgrade,
   selectTotalMoney,
-  resetType2Upgrade,
-} from "./moneySlice";
+} from "./app/moneySlice";
 import {
   buyType1Upgrade,
   buyType2Upgrade,
@@ -14,7 +13,7 @@ import {
   selectType2UpgradeActivated,
   selectType2UpgradeCost,
   selectType2UpgradeIncomePerSecond,
-} from "./upgradeSlice";
+} from "./app/upgradeSlice";
 
 const App: React.FC = () => {
   const dispatch = useDispatch();

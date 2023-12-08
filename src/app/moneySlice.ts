@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "./app/store";
+import { RootState } from "./store";
 
 export interface MoneyState {
+  money: any;
   totalMoney: number;
   type1Upgrade: number;
   type2UpgradeActivated: boolean;
@@ -11,6 +12,7 @@ const initialState: MoneyState = {
   totalMoney: 0,
   type1Upgrade: 1,
   type2UpgradeActivated: false,
+  money: undefined
 };
 
 const moneySlice = createSlice({
