@@ -1,6 +1,8 @@
 import React from "react";
 import { images } from "../../utils/ImageProvider";
 
+import './ImageButton.scss'
+
 export type ImageButtonProps = {
   onClick: () => void;
   imageKey: string;

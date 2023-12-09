@@ -12,10 +12,8 @@ import {
 } from "./app/upgradeSlice";
 
 import { ImageButton } from "./components/ImageButton";
-
-import { dictionary } from "./constants";
-import "./App.scss";
 import Typography from "./components/Typography/Typography";
+import "./App.scss";
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -48,28 +46,32 @@ const App: React.FC = () => {
   }, [dispatch, type2Activated, type2IncomePerSecond]);
 
   return (
-    <div>
-      <Typography variant="h1">{`${dictionary.TOTAL_MONEY} ${totalMoney}`}</Typography>
+    <div className="container">
       <ImageButton
-        onClick={() => dispatch(click())}
-        imageKey="programmer"
-        alt="Hamburger"
-        disabled={false}
-      />
-      <ImageButton
-        onClick={handleUpgradeClick}
-        imageKey="pcMouse"
-        alt="firstUpgrade"
-        disabled={totalMoney < type1Cost}
-      />
-      <Typography variant="h3">{`${dictionary.FIRST_TYPE_UPGRADE} ${type1Level}`}</Typography>
-      <ImageButton
-        onClick={handleType2UpgradeClick}
-        imageKey="keyboard"
-        alt="secondUpgrade"
-        disabled={totalMoney < type2Cost}
-      />
-      <Typography variant="h3">{`${dictionary.BYING_SECOND_TYPE_UPGRADE} ${dictionary.COST} ${type2Cost}`}</Typography>
+            onClick={() => dispatch(click())}
+            imageKey="programmer"
+            alt="MainClicker"
+            disabled={false}
+          />
+      <div className="upgrades">
+        <Typography variant="h1">{`Total Money: ${totalMoney}`}</Typography>
+        <div className="upgrades">
+          <ImageButton
+            onClick={handleUpgradeClick}
+            imageKey="pcMouse"
+            alt="firstUpgrade"
+            disabled={totalMoney < type1Cost}
+          />
+          <Typography variant="h3">{`First Upgrade Level: ${type1Level}`}</Typography>
+          <ImageButton
+            onClick={handleType2UpgradeClick}
+            imageKey="keyboard"
+            alt="secondUpgrade"
+            disabled={totalMoney < type2Cost}
+          />
+          <Typography variant="h3">{`Buying Second Upgrade (Cost: ${type2Cost})`}</Typography>
+        </div>
+      </div>
     </div>
   );
 };

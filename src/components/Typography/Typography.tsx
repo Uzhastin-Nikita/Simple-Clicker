@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Typography.scss";
+
 export type TypographyProps = {
   variant?: "h1" | "h2" | "h3" | "p";
   children: React.ReactNode;

@@ -1,13 +1,28 @@
-@import "./styles/colors";
+@import "./styles/colors.scss";
 
 body {
-    color: $text-color;
+    background-color: $background-light-color;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 0;
 }
 
-h1 {
-    color: $primary-color;
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: left;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.button {
-    color: $text-light-color;
+.upgrades {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.clicker {
+    margin: 0 auto;
 }
