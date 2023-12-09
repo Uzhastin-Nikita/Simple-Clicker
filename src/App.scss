@@ -1,7 +1,6 @@
 @import "./styles/colors";
 
 body {
-    background: url("./assets/background.png");
     color: $text-color;
 }
 
@@ -10,6 +9,5 @@ h1 {
 }
 
 .button {
-    background-color: $secondary-color;
     color: $text-light-color;
 }
