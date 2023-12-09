@@ -13,7 +13,9 @@ import {
 
 import { ImageButton } from "./components/ImageButton";
 
+import { dictionary } from "./constants";
 import "./App.scss";
+import Typography from "./components/Typography/Typography";
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -47,24 +49,26 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <h1>Total Money: {totalMoney}</h1>
-      <button onClick={() => dispatch(click())}>Click</button>
+      <Typography variant="h1">{`${dictionary.TOTAL_MONEY} ${totalMoney}`}</Typography>
       <ImageButton
         onClick={() => dispatch(click())}
         imageKey="hamburger"
         alt="Hamburger"
         disabled={false}
       />
-
-      <button onClick={handleUpgradeClick} disabled={totalMoney < type1Cost}>
-        Buy Type 1 Upgrade (Cost: {type1Cost})
-      </button>
-      <p>Type 1 Upgrade Level: {type1Level}</p>
+      <ImageButton
+        onClick={handleUpgradeClick}
+        imageKey="firstUpgrade"
+        alt="firstUpgrade"
+        disabled={totalMoney < type1Cost}
+      />
+      <Typography variant="h3">{`${dictionary.FIRST_TYPE_UPGRADE} ${type1Level}`}</Typography>
       <button
         onClick={handleType2UpgradeClick}
         disabled={totalMoney < type2Cost}
       >
         Buy Type 2 Upgrade (Cost: {type2Cost})
+        <Typography variant="h3">{`${dictionary.BYING_SECOND_TYPE_UPGRADE}`}</Typography>
       </button>
       {type2Activated && <p>Type 2 Upgrade Activated!</p>}
     </div>
