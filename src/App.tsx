@@ -52,25 +52,24 @@ const App: React.FC = () => {
       <Typography variant="h1">{`${dictionary.TOTAL_MONEY} ${totalMoney}`}</Typography>
       <ImageButton
         onClick={() => dispatch(click())}
-        imageKey="hamburger"
+        imageKey="programmer"
         alt="Hamburger"
         disabled={false}
       />
       <ImageButton
         onClick={handleUpgradeClick}
-        imageKey="firstUpgrade"
+        imageKey="pcMouse"
         alt="firstUpgrade"
         disabled={totalMoney < type1Cost}
       />
       <Typography variant="h3">{`${dictionary.FIRST_TYPE_UPGRADE} ${type1Level}`}</Typography>
-      <button
+      <ImageButton
         onClick={handleType2UpgradeClick}
+        imageKey="keyboard"
+        alt="secondUpgrade"
         disabled={totalMoney < type2Cost}
-      >
-        Buy Type 2 Upgrade (Cost: {type2Cost})
-        <Typography variant="h3">{`${dictionary.BYING_SECOND_TYPE_UPGRADE}`}</Typography>
-      </button>
-      {type2Activated && <p>Type 2 Upgrade Activated!</p>}
+      />
+      <Typography variant="h3">{`${dictionary.BYING_SECOND_TYPE_UPGRADE} ${dictionary.COST} ${type2Cost}`}</Typography>
     </div>
   );
 };

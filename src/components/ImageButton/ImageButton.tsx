@@ -25,7 +25,6 @@ export const ImageButton: React.FC<ImageButtonProps> = ({
 
   return (
     <button style={buttonStyle} onClick={onClick} disabled={disabled}>
-      {/* Optionally, you can include an alt text */}
       {alt && <span style={{ display: "none" }}>{alt}</span>}
     </button>
   );
