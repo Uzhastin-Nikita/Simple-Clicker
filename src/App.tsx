@@ -11,6 +11,8 @@ import {
   selectType2UpgradeIncomePerSecond,
 } from "./app/upgradeSlice";
 
+import { ImageButton } from "./components/ImageButton";
+
 import "./App.scss";
 
 const App: React.FC = () => {
@@ -47,6 +49,13 @@ const App: React.FC = () => {
     <div>
       <h1>Total Money: {totalMoney}</h1>
       <button onClick={() => dispatch(click())}>Click</button>
+      <ImageButton
+        onClick={() => dispatch(click())}
+        imageKey="hamburger"
+        alt="Hamburger"
+        disabled={false}
+      />
+
       <button onClick={handleUpgradeClick} disabled={totalMoney < type1Cost}>
         Buy Type 1 Upgrade (Cost: {type1Cost})
       </button>
