@@ -1,5 +1,5 @@
-import { createStore, combineReducers } from "redux";
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 import moneyReducer from "./moneySlice";
 import upgradeReducer from "./upgradeSlice";
 
