@@ -18,7 +18,7 @@ import "./App.scss";
 const App: React.FC = () => {
   const dispatch = useDispatch();
   const totalMoney = useSelector(selectTotalMoney);
-  const type1Level = useSelector(selectType1UpgradeLevel) as number;
+  const type1Level = useSelector(selectType1UpgradeLevel);
   const type1Cost = useSelector(selectType1UpgradeCost);
   const type2Activated = useSelector(selectType2UpgradeActivated);
   const type2IncomePerSecond = useSelector(selectType2UpgradeIncomePerSecond);
